@@ -1,0 +1,34 @@
+normal shel vs bash shel
+
+(no1+no2)
+
+ls -la
+
+(ls) - command 
+
+((no1 + no2)) - Expresion
+
+sum = $((no1 + no2))
+
+a = (1,2,3,4,5,6) - array (file - abc.sh)
+compile - bash abc.sh
+
+lat
+
+a=declare -A -> associative array key -> value
+
+a=declare -A ([kamlesh]=1 [ajay]=2 [vijay]=3)
+
+$(arr[@])
+
+$a.sh one two three
+
+$# - count = 3
+
+$@
+
+${10}
+
+
+
+q -> user add and group admin
