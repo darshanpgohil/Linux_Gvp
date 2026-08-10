@@ -32,3 +32,34 @@ ${10}
 
 
 q -> user add and group admin
+
+add user -> user add in system
+add group
+
+sudo cat /etc/passwd
+sudo cat /etc/passwd > user.txt
+nano user.txt
+
+sudo useradd kamalesh
+ls /home/k*
+
+sudo useradd -m kamal
+
+
+passwd kamal
+new password:123
+
+passwd -> current enter
+
+man usermod -> modify user
+
+groupadd
+
+ifconfig
+ip address
+putty windows 
+
+window -> talnet control panel -> programme 
+
+botable pandrive
+rufus
