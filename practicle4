@@ -1,0 +1,71 @@
+addition(){
+    num1=$1
+    num2=$2
+    
+    echo $((num1+num2))
+}
+
+subtraction()
+{
+    num1=$1
+    num2=$2
+    
+    echo $((num1-num2))
+}
+
+multiplication()
+{
+    num1=$1
+    num2=$2
+    
+    echo $((num1*num2))
+}
+
+division()
+{
+    num1=$1
+    num2=$2
+    
+    echo $((num1/num2))
+}
+
+modulus()
+{
+    num1=$1
+    num2=$2
+    
+    echo $((num1%num2))
+}
+
+read -p "Enter The Choice : " ch
+
+case $ch in
+    1)
+        read -p "Enter The Number1 : " number1
+        read -p "Enter The Number2 : " number2
+        addition $number1 $number2
+        ;;
+    2)
+        read -p "Enter The Number1 : " number1
+        read -p "Enter The Number2 : " number2
+        subtraction $number1 $number2
+        ;;
+    3)
+        read -p "Enter The Number1 : " number1
+        read -p "Enter The Number2 : " number2
+        multiplication $number1 $number2
+        ;;
+    4)
+        read -p "Enter The Number1 : " number1
+        read -p "Enter The Number2 : " number2
+        division $number1 $number2
+        ;;
+    5)
+        read -p "Enter The Number1 : " number1
+        read -p "Enter The Number2 : " number2
+        modulus $number1 $number2
+        ;;
+    *)
+        echo "Wrong Choice"
+        ;;
+esac
