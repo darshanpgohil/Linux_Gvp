@@ -1,0 +1,13 @@
+#!/bin/bash
+
+read -p "Enter The Number : " number
+
+i=0
+sum=0
+
+for i in $(seq 1 $number)
+do
+    sum=$((sum + i))
+done
+
+echo "Sum = ${sum}"
