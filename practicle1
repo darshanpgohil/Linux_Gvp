@@ -1,0 +1,17 @@
+#!/bin/bash
+
+read -p "Enter The Number : " number
+
+if [ $number -gt 0 ]; then
+    echo "${number} is Positive"
+elif [ $number -lt 0 ]; then
+    echo "${number} is Nagetive"
+else 
+    echo "${number} is 0"
+fi
+
+if [ $((number % 2)) -eq 0 ]; then
+    echo "${number} is Even"
+else
+    echo "${number} is Odd"
+fi
