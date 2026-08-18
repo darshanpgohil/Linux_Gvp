@@ -1,0 +1,32 @@
+#!/bin/bash
+
+echo "Current Date and Time :  $(date '+%a %b %d %H:%M:%S %Z %Y')"
+
+echo "Date is .......................: $(date '+%d-%m-%y')"
+echo "Date is .......................: $(date '+%m/%d/%y')"
+
+echo "Time is .......................: $(date '+%H - %M - %S')"
+echo "Time is .......................: $(date '+%H:%M:%S')"
+
+echo "No Of days elapsed in this year is : $((10#$(date '+%j')))"
+
+echo "Serial No. of day (of week) is....: $(date '+%u')"
+
+echo "Day and Date is......................: $(date '+%a %b %d, %y')"
+
+echo "Time in the from AM / PM : $(date '+%I:%M:%S %p')"
+
+hour=$(date '+%H')
+
+echo "$hour"
+
+if [ "$hour" -lt 12 ];
+then
+    echo "GOOD MORNING"
+elif [ "$hour" -lt 17 ]; then
+    echo "GOOD AFTERNOON"
+elif [ "$hour" -lt 21 ]; then
+    echo "GOOD EVENING"
+else
+    echo "GOOD NIGHT"
+fi
