@@ -174,7 +174,11 @@ case $ch in
 		read -p "Enter The Expiration Date (YYYY-MM-DD) : " expire_date
 		if id "$username" &>/dev/null
 		then
-			sudo chage -E "expire_date" "$username"
+			sudo chage -E "$expire_date" "$username"
+            echo "User Account Expire Date Set Successfully"
+		else
+		    echo "User Not Exiest"
+		fi
 	;;
 	15) read -p "Enter The Username : " username
 		if id "$username" &>/dev/null
