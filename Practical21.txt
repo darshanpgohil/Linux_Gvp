@@ -1,0 +1,16 @@
+#!/bin/bash
+
+read -p "Enter The Username : " uname
+
+if [ -z "$uname" ];
+then
+        echo "Username Can not be empty"
+exit 1
+fi
+
+if id "$uname" &>/dev/null;
+     echo "user already exists"
+else
+     sudo useradd -m "$uname"
+     echo "User created successfully"
+fi
