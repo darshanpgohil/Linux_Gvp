@@ -1,0 +1,19 @@
+create a script that reports cpu usage,memory usage, disk usage,uptime, logged-in users,running processes
+
+echo "Cpu Usage : " 
+top -bn1 | grep "Cpu(s)"
+
+echo "Memory Usage : "
+free -h
+
+echo "Disk Usage : "
+df -h
+
+echo "Uptime : "
+uptime -p
+
+echo "Logged-in Users : "
+who
+
+echo "Running Processes : "
+ps -ef

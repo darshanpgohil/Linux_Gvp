@@ -1,0 +1,15 @@
+#!/bin/bash
+
+read -p "Enter The Directory Path : " dir
+
+if [ -d "$dir" ];
+then
+	date_time=$(date +"%Y-%m-%d-%H-%M-%S")
+	backup="backup_$date_time.tar.gz"
+
+	tar -czf "$backup" "$dir"
+
+	echo "Backup File Created Successfully : $backup"
+else
+	echo "Directory : $dir Not Exiest"
+fi

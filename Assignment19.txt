@@ -1,0 +1,19 @@
+#Display The Linux Distribution,kernel version, hostname, cpu architecture, memory information and system uptime
+
+echo "Linux Distribution : "
+cat /etc/os-release | grep PRETTY_NAME
+
+echo "Kernel version : "
+uname -r
+
+echo "Hostname : "
+hostname
+
+echo "Cpu Architecture : "
+uname -m
+
+echo "Memory Information : "
+free -h
+
+echo "System Uptime : "
+uptime -p

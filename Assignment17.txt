@@ -1,0 +1,66 @@
+3) echo "Enter The Filename : " size
+
+   find . -type f -size +"$size" -print
+;;
+
+4) echo "Enter The Username : " username
+
+   if id "$username" &>/dev/null;
+   then
+	find . -type f -user "$username" -print
+   else
+	echo "User Does Not Exiest"
+   fi
+;;
+5) echo "Enter The File Permission : " perm
+
+   if [[ "$perm" =~ ^[0-7]{3-4}$ ]];
+   then
+	find . -type f -perm "$perm" -print
+   else
+	echo "This Is Not Valid Permission"
+   fi
+;;
+6) read -p "Enter The Number Of Days : " days
+
+   if [[ "$days" =~ ^[0-9]+$ ]];
+   then
+	find . -type f -mtime "-$((days+1))" -print
+   else
+	echo "Error : Enter A Valid Number"
+   fi
+;;
+7) read -p "Enter The Number Of Days : " days
+   if [[ "$days" =~ ^[0-9]+$ ]];
+   then
+	find . -type f -mtime +"$days" -print
+   else
+	echo "Enter A Valid Number"
+   fi
+;;
+8)
+;;
+9) read -p "Enter The Filename : " fname
+   read -p "Enter The Username : " user
+   read -p "Enter The File Permission : " perm
+   read -p "Enter The File Size : size
+
+   if id "$user" >/dev/null 2>&1 &&
+   [[ "$perm" =~ ^[0-7]{3-4}$ ]] &&
+   [[ "$size" =~ ^[0-9]+([kkMgG])?$ ]]
+   then
+	find . -type f -name "$fname" \
+	-user "$user" -perm "$perm" \
+	-size +"$size" -print
+   else
+	echo "Invalid user,perm,size"
+   fi
+;;
+10) read -p "Enter The Filename (e.g *.txt) fname
+    count=$(find . -type f -name "$fname" | wc -l)
+    echo "Matching File : "
+    find . -type f -name "$fname" -print
+    echo "Total Count File : $count"
+;;
+*) echo "Invalid Choice"
+;;
