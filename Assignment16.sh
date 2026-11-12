@@ -1,6 +1,6 @@
 #!/bin/bash
 
-today=$(date +%d+%m)
+today=$(date +%d-%m)
 
 while IFS=: read -r username login_name birthday
 do
