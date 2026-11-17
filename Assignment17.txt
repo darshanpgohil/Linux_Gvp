@@ -74,7 +74,10 @@ case "$ch" in
    fi
 ;;
 
-8)
+8) 	read -p "Enter The Start Date (YYYY-MM-DD) : " start_date
+	read -p "Enter The End Date (YYYY-MM-DD) : " end_date
+
+	find "$dir" -newermt "$start_date" ! -newermt "$end_date"
 ;;
 
 9) read -p "Enter The Filename : " fname
