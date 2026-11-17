@@ -56,7 +56,7 @@
 	echo "Invalid user,perm,size"
    fi
 ;;
-10) read -p "Enter The Filename (e.g *.txt) fname
+10) read -p "Enter The Filename (e.g *.txt) : " fname
     count=$(find . -type f -name "$fname" | wc -l)
     echo "Matching File : "
     find . -type f -name "$fname" -print
