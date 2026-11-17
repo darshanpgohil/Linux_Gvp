@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo "Tcp Port : "
+echo "Tcp Listening Port : "
 ss -tln
 
-echo "Udp Port : "
+echo "Udp Listening Port : "
 ss -uln
