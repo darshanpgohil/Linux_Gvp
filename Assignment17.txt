@@ -9,7 +9,7 @@ read -p "Enter The Ch : " ch
 
 case "$ch" in
 
-1) 	read -p "Enter The Filename : : fname
+1) 	read -p "Enter The Filename : " fname
 
    	if [ -f "$fname" ];
  	then
@@ -112,3 +112,4 @@ case "$ch" in
 
 esac
 done
+
