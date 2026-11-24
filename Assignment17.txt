@@ -11,11 +11,11 @@ case "$ch" in
 
 1) 	read -p "Enter The Filename : " fname
 
-   	if [ -f "$fname" ];
+   	if [ -n "$fname" ];
  	then
 		find "$dir" -type f -name "$fname"
 	else
-		echo "Invalid File Name"
+		echo "File Can Not Be Empty"
 	fi
 ;;
 
