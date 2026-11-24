@@ -104,7 +104,7 @@ case "$ch" in
     echo "Total Count File : $count"
 ;;
 
-11) exit 1
+11) exit 0
 ;;
 
 *) echo "Invalid Choice"
