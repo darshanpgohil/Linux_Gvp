@@ -21,7 +21,7 @@ case "$ch" in
 
 2) 	read -p "Enter The File Extention (txt,exe,pdf) : " ext
 
-	if [ -n "$ext" ];
+	if [ -z "$ext" ];
 	then
 		echo "Extention Can't Empty"
 		exit 1
@@ -32,7 +32,7 @@ case "$ch" in
 
 3) read -p "Enter The Filesize : " size
 
-   find . -type f -size +"$size" -print
+   find "$dir" -type f -size +"$size" -print
 ;;
 
 4) read -p "Enter The Username : " username
@@ -47,9 +47,9 @@ case "$ch" in
 
 5) read -p "Enter The File Permission : " perm
 
-   if [[ "$perm" =~ ^[0-7]{3-4}$ ]];
+   if [[ "$perm" =~ ^[0-7]{3,4}$ ]];
    then
-	find . -type f -perm "$perm" -print
+	find "$dir" -type f -perm "$perm" -print
    else
 	echo "This Is Not Valid Permission"
    fi
