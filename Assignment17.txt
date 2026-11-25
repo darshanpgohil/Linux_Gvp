@@ -32,7 +32,7 @@ case "$ch" in
 
 3) read -p "Enter The Filesize : " size
 
-   find "$dir" -type f -size +"$size" -print
+   find "$dir" -type f -size "${size}c" -print
 ;;
 
 4) read -p "Enter The Username : " username
@@ -91,7 +91,7 @@ case "$ch" in
    then
 	find "$dir" -type f -name "$fname" \
 	-user "$user" -perm "$perm" \
-	-size +"$size" -print
+	-size "${size}c" -print
    else
 	echo "Invalid user,perm,size"
    fi
