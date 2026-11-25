@@ -39,7 +39,7 @@ case "$ch" in
 
    if id "$username" &>/dev/null;
    then
-	find . -type f -user "$username" -print
+	find "$dir" -type f -user "$username" -print
    else
 	echo "User Does Not Exiest"
    fi
@@ -59,16 +59,16 @@ case "$ch" in
 
    if [[ "$days" =~ ^[0-9]+$ ]];
    then
-	find . -type f -mtime "-$((days+1))" -print
+	find "$dir" -type f -mtime "-$((days+1))" -print
    else
-	echo "Error : Enter A Valid Number"
+	echo "Error : Enter A Valid Day"
    fi
 ;;
 
 7) read -p "Enter The Number Of Days : " days
    if [[ "$days" =~ ^[0-9]+$ ]];
    then
-	find . -type f -mtime +"$days" -print
+	find "$dir" -type f -mtime +"$days" -print
    else
 	echo "Enter A Valid Number"
    fi
@@ -83,13 +83,13 @@ case "$ch" in
 9) read -p "Enter The Filename : " fname
    read -p "Enter The Username : " user
    read -p "Enter The File Permission : " perm
-   read -p "Enter The File Size : size
+   read -p "Enter The File Size : " size
 
    if id "$user" >/dev/null 2>&1 &&
-   [[ "$perm" =~ ^[0-7]{3-4}$ ]] &&
-   [[ "$size" =~ ^[0-9]+([kkMgG])?$ ]]
+   [[ "$perm" =~ ^[0-7]{3,4}$ ]] &&
+   [[ "$size" =~ ^[0-9]+$ ]]
    then
-	find . -type f -name "$fname" \
+	find "$dir" -type f -name "$fname" \
 	-user "$user" -perm "$perm" \
 	-size +"$size" -print
    else
@@ -98,9 +98,9 @@ case "$ch" in
 ;;
 
 10) read -p "Enter The Filename (e.g *.txt) : " fname
-    count=$(find . -type f -name "$fname" | wc -l)
+    count=$(find "$dir" -type f -name "$fname" | wc -l)
     echo "Matching File : "
-    find . -type f -name "$fname" -print
+    find "$dir" -type f -name "$fname" -print
     echo "Total Count File : $count"
 ;;
 
@@ -112,4 +112,3 @@ case "$ch" in
 
 esac
 done
-
